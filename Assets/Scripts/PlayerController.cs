@@ -9,6 +9,7 @@ namespace Assets
         private Rigidbody playerRb;
         private GameObject focalPoint;
         public float speed = 5.0f;
+        public bool hasPowerup;
 
         // Start is called before the first frame update
         void Start()
@@ -23,6 +24,13 @@ namespace Assets
             float forwardInput = Input.GetAxis("Vertical");
 
             playerRb.AddForce(focalPoint.transform.forward * forwardInput * speed);
+        }
+
+        private void OnTriggerEnter(Collider other)
+
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
         }
     }
 }
