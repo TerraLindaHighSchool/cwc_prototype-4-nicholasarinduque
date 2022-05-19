@@ -9,7 +9,7 @@ namespace Assets
         private Rigidbody playerRb;
         private GameObject focalPoint;
         public float speed = 5.0f;
-        public bool hasPowerup;
+        public bool hasPowerup = false;
 
         // Start is called before the first frame update
         void Start()
