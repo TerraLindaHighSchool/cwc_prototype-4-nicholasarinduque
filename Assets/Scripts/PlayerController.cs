@@ -27,10 +27,21 @@ namespace Assets
         }
 
         private void OnTriggerEnter(Collider other)
+		{
+			if(other.CompareTag("powerup"))
+			{
+				hasPowerup = true;
+				Destroy(other.gameObject);
+			}
+		}
 
-        {
-            hasPowerup = true;
-            Destroy(other.gameObject);
-        }
     }
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		if(collision.gameObject.CompareTag("Enemy") && hasPowerup)
+		{
+		    Debug.Log("Collided with: " + collison.gameObject.name + " with powerup set to " + hasPowerup);
+		}
+	}
 }
