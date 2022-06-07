@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 323882337}
   - component: {fileID: 323882336}
   - component: {fileID: 323882335}
+  - component: {fileID: 323882341}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -248,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f09c0bd774dfe49906d3b226303a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   hasPowerup: 0
   powerupIndicator: {fileID: 1056201284}
 --- !u!54 &323882336
@@ -341,6 +342,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &323882341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323882334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b37f7283e0c0749bec009e8b3a03bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 1
 --- !u!1 &336873196
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +384,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32165247448cb1f488f0fee36ba24a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 981826322068088860, guid: 5a072bba5e6eefd40abde709474f12fa,
+    type: 3}
+  powerupPrefab: {fileID: 3111202724511484334, guid: 5a3ac75a1d5b0f046ac6bc9b210c26ab,
+    type: 3}
+  enemyCount: 0
+  waveNumber: 1
 --- !u!4 &336873198
 Transform:
   m_ObjectHideFlags: 0
@@ -687,7 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4428908044626120, guid: 923deea38dc6a8843b15db7638919c1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.52
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4428908044626120, guid: 923deea38dc6a8843b15db7638919c1e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -752,6 +772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b37f7283e0c0749bec009e8b3a03bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 50
 --- !u!4 &1735868364
 Transform:
   m_ObjectHideFlags: 0

@@ -24,15 +24,13 @@ namespace Assets.Scripts
         void Update()
         {
             float forwardInput = Input.GetAxis("Vertical");
-
             playerRb.AddForce(focalPoint.transform.forward * forwardInput * speed);
-
             powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0); 
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("powerup"))
+            if (other.CompareTag("Powerup"))
             {
                 hasPowerup = true;
                 powerupIndicator.gameObject.SetActive(true);
@@ -43,7 +41,7 @@ namespace Assets.Scripts
 
         IEnumerator PowerupCountdownRoutine()
         {
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(10);
             hasPowerup = false;
             powerupIndicator.gameObject.SetActive(false);
         }
@@ -53,7 +51,6 @@ namespace Assets.Scripts
             {
                 Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
                 Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
-
                 enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
                 Debug.Log("Collided with: " + collision.gameObject.name + " with powerup set to " + hasPowerup);
             }
